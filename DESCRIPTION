@@ -1,0 +1,15 @@
+Package: windowscanr
+Title: Apply functions using sliding windows
+Version: 0.1
+Authors@R: person("Hugo", "Tavares", email = "hugo.tavares@slcu.cam.ac.uk", role = c("aut", "cre"))
+Description: windowscanr is a simple package with one main function: `winScan()`. This function 
+             allows one to calculate any statistics across a sliding window. It works on data.frame objects, 
+             and supports both "rolling" windows (simply based on the rows of the table) or "position" windows 
+             (based on a variable of positions given by the user). It can apply any valid functions given by 
+             the user and calculate windows based on grouping variables.
+Depends: R (>= 3.2.3)
+License: CC0
+LazyData: true
+Depends:dplyr
+Suggests:ggplot2,tidyr,knitr
+VignetteBuilder: knitr
