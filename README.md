@@ -9,7 +9,7 @@ and supports both "rolling" windows (simply based on the rows of the table) or "
 
 It can apply any valid functions given by the user and define windows based on grouping variables. 
 
-See package vignette for more details.
+See the package intro for more details (in the _/inst/doc_ directory).
 
 # Installing
 
@@ -22,7 +22,7 @@ install_github('tavareshugo/windowscanr')
 
 # Quick intro
 
-See the package vignette:
+After installing it, you can see the intro vignette:
 
 ```
 library(windowscanr)
