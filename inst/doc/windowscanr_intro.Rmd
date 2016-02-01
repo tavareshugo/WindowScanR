@@ -2,7 +2,9 @@
 title: "`windowscanr` package intro"
 author: "Hugo Tavares"
 date: "29 January 2016"
-output: pdf_document
+output: 
+  html_document:
+    keep_md: true
 ---
 
 <!--

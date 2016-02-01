@@ -9,7 +9,7 @@ and supports both "rolling" windows (simply based on the rows of the table) or "
 
 It can apply any valid functions given by the user and define windows based on grouping variables. 
 
-See the package intro for more details (in the _/inst/doc_ directory).
+See the [package intro](./vignettes/windowscanr_intro.md) for more details.
 
 # Installing
 
