@@ -1,6 +1,6 @@
 # WindowScanr: sliding window analysis
 
-![](./vignettest/window_example.png)
+![](./vignettes/window_example.png)
 
 `windowscanr` is a simple package with one main function: `winScan()`. This function 
 allows one to calculate any statistics across a sliding window. It works on data.frame objects, 
