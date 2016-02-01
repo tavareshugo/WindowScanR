@@ -27,7 +27,7 @@
 #' # Now, on the x-axis, the points are separated 
 #' # by 1 unit WITHIN groups. But cumulatively
 #' # ACROSS groups
-#' plot(cumSumGroup(group, position), values, col = group)
+#' plot(cumSumGroup(position, group), values, col = group)
 cumSumGroup = function(x, group){
 	
 	# Convert variables to correct classes
