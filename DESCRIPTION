@@ -10,6 +10,6 @@ Description: windowscanr is a simple package with one main function: `winScan()`
 Depends: R (>= 3.2.3)
 License: CC0
 LazyData: true
-Depends:dplyr
+Imports:dplyr
 Suggests:ggplot2,tidyr,knitr
 VignetteBuilder: knitr
