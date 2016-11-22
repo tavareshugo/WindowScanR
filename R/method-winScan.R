@@ -46,6 +46,7 @@ setMethod("winScan", "data.frame", function(x,
 	} else {
 		# Rename position variable for downstream functions
 		x <- rename_(x, "pos" = position)
+		assertthat::assert_that(is.numeric(x$pos))
 	}
 	
 	### Compute window statistics per group ###

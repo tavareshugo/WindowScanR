@@ -12,3 +12,8 @@
 #' @examples
 #' ... to be filled in
 setGeneric("winScan", function(x, ...) standardGeneric("winScan"))
+
+
+# Set old class for tbl_df
+## see http://stackoverflow.com/questions/35642191/tbl-df-with-s4-object-slots
+setOldClass(c("tbl_df", "tbl", "data.frame"))
