@@ -49,6 +49,10 @@ setMethod("winScan", "data.frame", function(x,
 		assertthat::assert_that(is.numeric(x$pos))
 	}
 	
+	## Warn if window size is smaller than step size ##
+	if(win_size < win_step) warning("Window size is smaller than step size!")
+	
+	
 	### Compute window statistics per group ###
 	out = x %>% group_by_(.dots = groups) %>% 
 		do(.winSlider(., values, win_size, win_step, funs, cores)) %>%
@@ -72,12 +76,17 @@ setMethod("winScan", "data.frame", function(x,
 .winSlider <- function (x, values, win_size, win_step, funs, cores) 
 {
 	
+  # Warn if window size is bigger than position
+  if(win_size > max(x$pos)){
+    warning("Window size is bigger than the maximum number of observations in some groups")
+  } 
+  
 	### Define window start ###
 	win_start <- seq(0, max(x$pos), win_step)
 	
-	# Remove the last value, so that last window 
-	# is before the end of the positions
-	win_start <- win_start[-length(win_start)]
+	# Remove the last value, so that last window is before the end of the positions
+	## Need to condition for cases where there's only one window though
+	if(length(win_start) > 1) win_start <- win_start[-length(win_start)]
 	
 	### Loop through windows ###
 	funs_out <- parallel::mclapply(win_start, .winStats, win_size, funs, values, x, mc.cores = cores)
