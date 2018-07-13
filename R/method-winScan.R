@@ -93,7 +93,7 @@ setMethod("winScan", "data.frame", function(x,
 	funs_out <- do.call(rbind, funs_out)
 	
 	### Make output data.frame ###
-	out <- data.frame(win_start = win_start, win_end = win_start + win_size)
+	out <- data.frame(win_start = win_start + 1, win_end = win_start + win_size)
 	out$win_mid <- floor((out$win_start + out$win_end)/2)
 	out <- cbind(out, funs_out)
 	
